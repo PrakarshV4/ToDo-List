@@ -62,7 +62,6 @@ app.post('/todo',userMiddleware,async(req, res) => {
 })
 //View all todos
 app.get('/getTodos',userMiddleware,async (req,res)=>{
-
     const email = req.email;
     User.findOne({email: email})
     .then((user)=>{
@@ -70,6 +69,12 @@ app.get('/getTodos',userMiddleware,async (req,res)=>{
     }).catch((err)=>{
         console.log(err);
     })
+})
+
+app.put('/removeTodos',userMiddleware,async (req,res)=>{
+    const email = req.email;
+    User.findOne({email: email})
+    .then()
 })
 
 app.listen(3000,()=>{
